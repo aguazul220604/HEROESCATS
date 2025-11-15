@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://coo5uh55qjl3o"]
+
+[ext_resource type="Script" uid="uid://dyk6lpa33nm0t" path="res://Lore.gd" id="1_k5caf"]
+[ext_resource type="Texture2D" uid="uid://dj04cy0jkaf5h" path="res://backgrounds_interface/3.png" id="1_pp6gk"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k5caf")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_pp6gk")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 828.5
+offset_top = 700.0
+offset_right = 900.5
+offset_bottom = 771.0
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 45
+text = "OK"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://djpsfplrev3j1"]
+
+[ext_resource type="Texture2D" uid="uid://pb7henlbhe7a" path="res://backgrounds_interface/4.png" id="1_3hls8"]
+[ext_resource type="Script" uid="uid://buk4vath5giie" path="res://Level_1.gd" id="2_hbghi"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_3hls8")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 828.5
+offset_top = 700.0
+offset_right = 900.5
+offset_bottom = 771.0
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 45
+text = "OK"
+script = ExtResource("2_hbghi")
+
+[connection signal="pressed" from="VBoxContainer/Button" to="VBoxContainer/Button" method="_on_pressed"]
