@@ -1,7 +1,11 @@
 extends Node
 
-# Guarda el nombre de la escena
-var scene = ""
+# Estado temporal del jugador
+var is_hurt: bool = false
 
-# Estado del jugador (puede estar herido o no)
-var is_hurt = false
+# Vidas del jugador
+var max_lives: int = 7
+var lives: int = 7
+
+# (Opcional) Guardar nombre de escena actual
+var scene: String = ""

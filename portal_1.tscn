@@ -1,0 +1,77 @@
+[gd_scene load_steps=11 format=3 uid="uid://cn52hfopucxy5"]
+
+[ext_resource type="Texture2D" uid="uid://cgoqvqnd5kopg" path="res://backgrounds_interface/Dimensional_Portal.png" id="1_0r486"]
+[ext_resource type="Script" uid="uid://cffsgeillvoku" path="res://Portal_1.gd" id="1_ef3v5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ef3v5"]
+atlas = ExtResource("1_0r486")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_grrij"]
+atlas = ExtResource("1_0r486")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6r214"]
+atlas = ExtResource("1_0r486")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2pgh4"]
+atlas = ExtResource("1_0r486")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wtc1a"]
+atlas = ExtResource("1_0r486")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w8rct"]
+atlas = ExtResource("1_0r486")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r8kna"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ef3v5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_grrij")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6r214")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2pgh4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wtc1a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w8rct")
+}],
+"loop": true,
+"name": &"Portal",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0a7dg"]
+size = Vector2(51, 328)
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_ef3v5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(124.5, -163.5)
+scale = Vector2(8.78125, 11.21875)
+sprite_frames = SubResource("SpriteFrames_r8kna")
+animation = &"Portal"
+frame_progress = 0.70002204
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(165.5, -164)
+shape = SubResource("RectangleShape2D_0a7dg")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.9
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
