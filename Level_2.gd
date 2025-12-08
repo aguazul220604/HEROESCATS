@@ -12,4 +12,4 @@ func _process(delta: float) -> void:
 
 
 func _on_button_pressed() -> void:
-	Transition.change_scene("res://powered.tscn")
+	Transition.change_scene("res://level_2_play.tscn")

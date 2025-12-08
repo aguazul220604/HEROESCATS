@@ -12,4 +12,6 @@ func _process(delta: float) -> void:
 
 
 func _on_button_pressed() -> void:
+	Global.max_lives = 7
+	Global.lives = 7
 	Transition.change_scene("res://lore.tscn")

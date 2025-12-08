@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://bisekgtu8e2dt"]
+
+[ext_resource type="Script" path="res://VictoryScreen.gd" id="1_r8dr5"]
+[ext_resource type="Texture2D" uid="uid://bnalbihx5d7mr" path="res://level_4/backgrounds/victory.png" id="1_rbj82"]
+
+[node name="VictoryScreen" type="Control"]
+z_index = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r8dr5")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 2555.0
+offset_top = -128.0
+offset_right = 4528.0
+offset_bottom = 1172.0
+mouse_filter = 2
+texture = ExtResource("1_rbj82")
